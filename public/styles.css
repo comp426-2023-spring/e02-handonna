@@ -90,11 +90,11 @@ button#play-button:hover {
 #game-result {
     display: none;
     text-align: center;
-}
+}/* ... Existing code ... */
 
 button#rules-button {
     display: block;
-    background-color: #8DB6CD;
+    background-color: #5C9EAD;
     color: #ffffff;
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -102,11 +102,54 @@ button#rules-button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-button#rules-button:hover {
-    background-color: #4f8b9d;
-}
-#rules {
+  }
+  
+  button#rules-button:hover {
+    background-color: #337f91;
+  }
+  
+  /* ... Existing code ... */
+  
+  
+  .rules-section {
     display: none;
-}
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  /* ... Existing code ... */
+
+button#reset-button {
+    display: block;
+    background-color: #5C9EAD;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button#reset-button:hover {
+    background-color: #337f91;
+  }
+  /* ... Existing code ... */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  h5, h6 {
+    font-size: 1.1em; /* Adjust the value as per your preference */
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: .9em;
+    margin-top: none;
+    margin-bottom: 2%;
+  }
+  

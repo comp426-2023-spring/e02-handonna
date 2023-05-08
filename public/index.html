@@ -11,11 +11,11 @@
 <body>
     <div class="container">
         <header>
-            <h1>Play a Game!</h1>
+            <h1>Play a Game of RPS or RPSLS!</h1>
         </header>
         <main>
             <section id="game-selection" class="section">
-                <h2>Choose Game:</h2>
+                <h2>Which Game?</h2>
                 <div class="option">
                     <input type="radio" name="game" id="rps" value="rps" checked>
                     <label for="rps">Rock, Paper, Scissors</label>
@@ -26,18 +26,19 @@
                 </div>
             </section>
             <section id="opponent-selection" class="section">
-                <h2>Play against an opponent?</h2>
+                <h2>Opponent or Random Draw?</h2>
                 <div class="option">
                     <input type="radio" name="opponent" id="opponent-yes" value="yes" checked>
-                    <label for="opponent-yes">Yes</label>
+                    <label for="opponent-yes">Opponent</label>
                 </div>
                 <div class="option">
                     <input type="radio" name="opponent" id="opponent-no" value="no">
-                    <label for="opponent-no">No</label>
+                    <label for="opponent-no">Random Draw</label>
                 </div>
             </section>
             <section id="move-selection" class="section">
-                <h2>Choose your move (use top row for rock paper scissors and bottom for rock paper scissors lizard spock!):</h2>
+                <h2>Which move?</h2>
+                <h3>Click using top row for RPS, bottom for RPSLS</h3>
                 <div id="rps-options" class="options-container">
                     <div class="option">
                         <input type="radio" name="rps-move" id="rock" value="rock" checked>
@@ -75,24 +76,23 @@
                     </div>
                 </div>
             </section>
-<<<<<<< HEAD
-            <button type="button" id="rules-button">Rules</button>
-            <section id="rules" class="section">
-                    <h2>Rules:</h2>
-=======
-<button type="button" id="rules-button">Rules</button>
-<button id="rules" type="button">Rules</button>
-<section id="rules" class="section">
-    <h2>Rules:</h2>
->>>>>>> a7f533ffd05f87b130f9bc0e5d86adfcc68d2a75
+            <!-- ... Existing code ... -->
+<!-- ... Existing code ... -->
+<div class="buttons">
+    <button id="play-button">Play Now!</button>
+    <button id="reset-button">Reset Game</button>
+    <button id="rules-button">Click for Rules</button>
+  </div>
+  <div id="game-rules" style="display:none;">
+    <h4>Click "Rules" Again to hide rules!</h4>
+    <h5>Rules for Rock, Paper Scissors</h5>
     <ul>
-        Rules for Rock, Paper, Scissors:
         <li>Scissors CUTS Paper</li>
         <li>Paper COVERS Rock</li>
         <li>Rock CRUSHES Scissors</li>
-    </ul>
+      </ul>
+    <h6>Rules for Rock, Paper Scissors, Lizard, Spock:</h6>
     <ul>
-        Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
         <li>Scissors CUTS Paper</li>
         <li>Paper COVERS Rock</li>
         <li>Rock CRUSHES Scissors</li>
@@ -103,8 +103,14 @@
         <li>Lizard EATS Paper</li>
         <li>Paper DISPROVES Spock</li>
         <li>Spock VAPORIZES Rock</li>
+        </ul>
+      </div>
+      </ul>
     </ul>
-</section>
+  </section>
+  <!-- ... Existing code ... -->
+  
+  
 
             <section id="game-result" class="section">
                 <h2>Result:</h2>
