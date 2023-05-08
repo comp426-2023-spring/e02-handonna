@@ -150,12 +150,109 @@ process.on('SIGINT', () => {
     if (args.debug) {
       console.info('\n' + stoppedlog);
     }
-  });
-  app.use('/', express.static(staticpath));
+  })
+})
+import { rps, rpsls } from "./lib/rpsls.js";
 
-app.get('/app/', (req, res) => {
-  res.status(200).send('200 OK');
+// endpoint at /app/ returns 200 OK
+app.get("/app/", (req,res) => {
+    res.status(200).send({"message":"200 OK"});
 });
 
+// endpoint at /app/rps/ returns {"player":"(rock|paper|scissors)"}
+app.get("/app/rps/", (req,res) => {
+    var result = JSON.stringify(rps())
+    res.status(200)
+    .setHeader('Content-type', 'application/json')
+    .send(result)
+});
 
+// '/app/rpsls/' accepts the correct request bodies
+app.get("/app/rpsls/", (req,res) => {
+    var result = JSON.stringify(rpsls())
+    res.status(200)
+    .setHeader('Content-type', 'application/json')
+    .send(result)
+});
+
+// playing rps endpoint
+app.get("/app/rps/play/", (req,res) => {
+    try {
+        const choice = req.query.choice;
+        const result = JSON.stringify(rps(choice));
+        res.status(200)
+        .setHeader('Content-Type', 'application/json')
+        .send(result);
+    } catch{
+        res.status(400).send(`${choice} is out of range.`);
+    }
+});
+
+// playing rpsls endpoint
+app.get("/app/rpsls/play/", (req,res) => {
+    try {
+        const choice = req.query.choice;
+        const result = JSON.stringify(rpsls(choice));
+        res.status(200)
+        .setHeader('Content-Type', 'application/json')
+        .send(result);
+    } catch{
+        res.status(400).send(`${choice} is out of range.`);
+    }
+});
+
+// rps play post
+app.post("/app/rps/play/", (req,res) => {
+    try {
+        const choice = req.body.choice;
+        const result = JSON.stringify(rps(choice));
+        res.status(200)
+        .setHeader('Content-Type', 'text/plain')
+        .send(result);
+    } catch{
+        res.status(400).send(`${choice} is out of range.`);
+    }
+});
+
+// rpsls play post
+app.post("/app/rpsls/play/", (req,res) => {
+    try {
+        const choice = req.body.choice;
+        const result = JSON.stringify(rpsls(choice));
+        res.status(200)
+        .setHeader('Content-Type', 'application/json')
+        .send(result);
+    } catch{
+        res.status(400).send(`${choice} is out of range.`);
+    }
+});
+
+app.get("/app/rps/play/:choice", (req,res) => {
+    try {
+        const choice = req.params.choice;
+        const result = JSON.stringify(rps(choice));
+        res.status(200)
+        .setHeader('Content-Type', 'application/json')
+        .send(result);
+    } catch{
+        res.status(400).send(`${choice} is out of range.`);
+    }
+});
+
+app.get("/app/rpsls/play/:choice", (req,res) => {
+    try {
+        const choice = req.params.choice;
+        const result = JSON.stringify(rpsls(choice));
+        res.status(200)
+        .setHeader('Content-Type', 'application/json')
+        .send(result);
+    } catch{
+        res.status(400).send(`${choice} is out of range.`);
+    }
+});
+
+// catch 404 error
+app.get("app/*", (req,res) => {
+    res.status(404)
+    .send('404: Not Found!');
 });
