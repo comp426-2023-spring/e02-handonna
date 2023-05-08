@@ -23,6 +23,7 @@
   "author": "@jdmar3",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "expres": "^0.0.5",
     "express": "^4.18.2",
     "minimist": "^1.2.8",
     "morgan": "^1.10.0"
