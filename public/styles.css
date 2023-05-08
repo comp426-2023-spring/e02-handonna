@@ -90,7 +90,7 @@ button#play-button:hover {
 #game-result {
     display: none;
     text-align: center;
-}/* ... Existing code ... */
+}
 
 button#rules-button {
     display: block;
@@ -107,17 +107,12 @@ button#rules-button {
   button#rules-button:hover {
     background-color: #337f91;
   }
-  
-  /* ... Existing code ... */
-  
-  
+
   .rules-section {
     display: none;
     text-align: left;
     margin-top: 20px;
   }
-
-  /* ... Existing code ... */
 
 button#reset-button {
     display: block;
@@ -134,7 +129,7 @@ button#reset-button {
   button#reset-button:hover {
     background-color: #337f91;
   }
-  /* ... Existing code ... */
+  
 
 .buttons {
     display: flex;
@@ -143,13 +138,12 @@ button#reset-button {
   }
   
   h5, h6 {
-    font-size: 1.1em; /* Adjust the value as per your preference */
+    font-size: 1.1em; 
     font-weight: bold;
   }
 
   h3 {
     font-size: .9em;
-    margin-top: none;
     margin-bottom: 2%;
   }
   

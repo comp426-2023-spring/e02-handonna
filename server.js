@@ -151,11 +151,11 @@ process.on('SIGINT', () => {
       console.info('\n' + stoppedlog);
     }
   });
-  app.get('/app/', (req, res) => {
-    res.status(200).send('200 OK');
-  });
   app.use('/', express.static(staticpath));
 
-  
+app.get('/app/', (req, res) => {
+  res.status(200).send('200 OK');
+});
+
 
 });
