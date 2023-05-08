@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = await response.json();
 
     gameResult.style.display = 'block';
-    resultText.innerHTML = `Player chose ${result.player}, Opponent chose ${result.opponent}, Result is ${result.result}.`;
+    resultText.innerHTML = `Player picked ${result.player}. Opponent picked ${result.opponent}. Result: You ${result.result}!`;
   });
 
   resetButton.addEventListener('click', () => {
