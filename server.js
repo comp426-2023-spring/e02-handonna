@@ -154,12 +154,10 @@ process.on('SIGINT', () => {
 })
 import { rps, rpsls } from "./lib/rpsls.js";
 
-// endpoint at /app/ returns 200 OK
 app.get("/app/", (req,res) => {
     res.status(200).send({"message":"200 OK"});
 });
 
-// endpoint at /app/rps/ returns {"player":"(rock|paper|scissors)"}
 app.get("/app/rps/", (req,res) => {
     var result = JSON.stringify(rps())
     res.status(200)
@@ -167,7 +165,6 @@ app.get("/app/rps/", (req,res) => {
     .send(result)
 });
 
-// '/app/rpsls/' accepts the correct request bodies
 app.get("/app/rpsls/", (req,res) => {
     var result = JSON.stringify(rpsls())
     res.status(200)
@@ -175,7 +172,7 @@ app.get("/app/rpsls/", (req,res) => {
     .send(result)
 });
 
-// playing rps endpoint
+
 app.get("/app/rps/play/", (req,res) => {
     try {
         const choice = req.query.choice;
@@ -188,7 +185,7 @@ app.get("/app/rps/play/", (req,res) => {
     }
 });
 
-// playing rpsls endpoint
+
 app.get("/app/rpsls/play/", (req,res) => {
     try {
         const choice = req.query.choice;
@@ -201,7 +198,7 @@ app.get("/app/rpsls/play/", (req,res) => {
     }
 });
 
-// rps play post
+
 app.post("/app/rps/play/", (req,res) => {
     try {
         const choice = req.body.choice;
@@ -214,7 +211,7 @@ app.post("/app/rps/play/", (req,res) => {
     }
 });
 
-// rpsls play post
+
 app.post("/app/rpsls/play/", (req,res) => {
     try {
         const choice = req.body.choice;
@@ -251,7 +248,6 @@ app.get("/app/rpsls/play/:choice", (req,res) => {
     }
 });
 
-// catch 404 error
 app.get("app/*", (req,res) => {
     res.status(404)
     .send('404: Not Found!');
